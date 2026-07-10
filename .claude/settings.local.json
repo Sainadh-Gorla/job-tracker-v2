@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e \"JSON.parse\\(require\\('fs'\\).readFileSync\\('manifest.json','utf8'\\)\\); console.log\\('manifest.json is valid JSON'\\)\")",
+      "Bash(node -e \"JSON.parse\\(require\\('fs'\\).readFileSync\\('manifest.json','utf8'\\)\\); console.log\\('manifest.json valid'\\)\")",
+      "Bash(node --check content.js)",
+      "Bash(node -e ' *)"
+    ]
+  }
+}

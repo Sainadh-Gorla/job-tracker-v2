@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>JobTrack v2</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div class="popup">
+      <h1>JobTrack v2</h1>
+
+      <div id="loggedOutView">
+        <p class="hint">Log in with your JobTrack v2 account to save jobs from LinkedIn, Indeed, Glassdoor, and Amazon Jobs.</p>
+        <form id="loginForm">
+          <input type="email" id="email" placeholder="Email" autocomplete="username" required />
+          <input type="password" id="password" placeholder="Password" autocomplete="current-password" required />
+          <button type="submit">Log In</button>
+        </form>
+        <p id="loginError" class="error"></p>
+      </div>
+
+      <div id="loggedInView" hidden>
+        <p class="hint">Logged in as <strong id="userEmail"></strong></p>
+        <button id="saveCurrentBtn">Save this page to JobTrack</button>
+        <p id="saveStatus"></p>
+        <hr />
+        <button id="logoutBtn" class="secondary">Log Out</button>
+      </div>
+    </div>
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>

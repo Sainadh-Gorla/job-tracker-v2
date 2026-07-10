@@ -1,0 +1,43 @@
+{
+  "manifest_version": 3,
+  "name": "JobTrack v2 Saver",
+  "version": "1.0.0",
+  "description": "Save job postings from LinkedIn, Indeed, Glassdoor, and Amazon Jobs straight to your JobTrack v2 dashboard.",
+  "permissions": ["storage", "activeTab"],
+  "host_permissions": [
+    "https://identitytoolkit.googleapis.com/*",
+    "https://securetoken.googleapis.com/*",
+    "https://firestore.googleapis.com/*",
+    "https://*.linkedin.com/*",
+    "https://www.indeed.com/*",
+    "https://*.indeed.com/*",
+    "https://www.glassdoor.com/*",
+    "https://www.amazon.jobs/*",
+    "https://amazon.jobs/*",
+    "https://hiring.amazon.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.linkedin.com/jobs*",
+        "https://www.indeed.com/*",
+        "https://*.indeed.com/*",
+        "https://www.glassdoor.com/*",
+        "https://www.amazon.jobs/*",
+        "https://amazon.jobs/*",
+        "https://hiring.amazon.com/*"
+      ],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "JobTrack v2"
+  }
+}
