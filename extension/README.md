@@ -10,6 +10,30 @@ place the web app reads from.
 2. Enable **Developer mode** (top right).
 3. Click **Load unpacked** and select this `extension/` folder.
 
+`manifest.json` includes a `"key"` field, so the extension always gets the
+same ID (`pkfifdimcacinjofliaifedkeppbbbmn`) no matter how many times you
+remove and reload it as unpacked. Without this, Chrome assigns a *new random
+ID* on every reload, and any tab that was already open when you reloaded
+keeps running its old content script bound to the now-dead extension context
+- that's what produces `chrome-extension://invalid/...` errors in the
+console. The corresponding private key lives at `../extension-key.pem` (one
+level up, in the project root - not inside the extension folder itself, and
+kept out of git via `.gitignore`) - it doesn't need to be shared with
+anyone, it just needs to stay put on this machine so the ID doesn't change
+again. If it's ever lost, generate a fresh one and the ID will change once,
+then stay fixed from then on:
+
+```
+openssl genrsa -out extension-key.pem 2048
+openssl rsa -in extension-key.pem -pubout -outform DER | openssl base64 -A
+```
+
+Paste the output into manifest.json's `"key"` field.
+
+Even with a stable ID, any tab open *before* you reload the extension still
+needs a manual refresh afterward - a reload doesn't retroactively fix content
+scripts already running in old tabs.
+
 ## Use it
 
 1. Click the extension icon and log in with the same email/password you use

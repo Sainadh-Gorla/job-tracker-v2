@@ -1,10 +1,12 @@
 import { useState } from 'react'
 import JobForm from './JobForm'
 import { avatarColor, avatarInitial } from '../utils/avatar'
+import { downloadJobDescription } from '../utils/jobDoc'
 
 export default function JobItem({ job, onUpdate, onDelete }) {
   const [editing, setEditing] = useState(false)
   const [deleting, setDeleting] = useState(false)
+  const [downloading, setDownloading] = useState(false)
 
   async function handleSave(updates) {
     await onUpdate(job.id, updates)
@@ -18,6 +20,19 @@ export default function JobItem({ job, onUpdate, onDelete }) {
       await onDelete(job.id)
     } finally {
       setDeleting(false)
+    }
+  }
+
+  async function handleDownloadJD() {
+    if (!job.description) {
+      alert('No job description saved for this application.')
+      return
+    }
+    setDownloading(true)
+    try {
+      await downloadJobDescription(job)
+    } finally {
+      setDownloading(false)
     }
   }
 
@@ -59,6 +74,9 @@ export default function JobItem({ job, onUpdate, onDelete }) {
         )}
       </div>
       <div className="job-item-actions">
+        <button className="btn-secondary" onClick={handleDownloadJD} disabled={downloading}>
+          {downloading ? 'Preparing…' : 'Download JD'}
+        </button>
         <button className="btn-secondary" onClick={() => setEditing(true)}>
           Edit
         </button>

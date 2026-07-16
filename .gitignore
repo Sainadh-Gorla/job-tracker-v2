@@ -16,6 +16,10 @@ dist-ssr
 .env
 .env.local
 
+# Chrome extension signing key (keeps the unpacked extension ID stable across
+# reloads - not needed by anyone but the person loading it locally)
+extension-key.pem
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

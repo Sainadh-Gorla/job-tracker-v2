@@ -1,0 +1,37 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(node test-longest-text.cjs)",
+      "Bash(rm -f test-longest-text.cjs)",
+      "Bash(npm uninstall *)",
+      "Bash(node \"C:\\\\Users\\\\Sainath\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-Sainath-OneDrive-Desktop-job-tracker-v2\\\\e4549c71-1d79-439d-8317-bc195a0dd561\\\\scratchpad\\\\match-test.cjs\")",
+      "Bash(node -e \"JSON.parse\\(require\\('fs'\\).readFileSync\\('manifest.json','utf8'\\)\\); console.log\\('manifest.json valid'\\)\")",
+      "Bash(openssl version *)",
+      "Bash(openssl genrsa *)",
+      "Bash(openssl rsa *)",
+      "Bash(openssl base64 *)",
+      "Bash(node -e ' *)",
+      "Bash(node test-desc-fallback.cjs)",
+      "Bash(rm -f test-desc-fallback.cjs)",
+      "Bash(node test-wait-description.cjs)",
+      "Bash(jobs -l)",
+      "Bash(rm -f test-wait-description.cjs)",
+      "Bash(node test-heading-extraction.cjs)",
+      "Bash(rm -f test-heading-extraction.cjs)",
+      "Bash(node test-heading-walkup.cjs)",
+      "Bash(rm -f test-heading-walkup.cjs)",
+      "Bash(node \"C:\\\\Users\\\\Sainath\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-Sainath-OneDrive-Desktop-job-tracker-v2\\\\e4549c71-1d79-439d-8317-bc195a0dd561\\\\scratchpad\\\\test-jobdoc2.cjs\")",
+      "Bash(node test-location-jobtype.cjs)",
+      "Bash(rm -f test-location-jobtype.cjs)",
+      "Bash(echo \"exit code: $?\")",
+      "Bash(node \"C:\\\\Users\\\\Sainath\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-Sainath-OneDrive-Desktop-job-tracker-v2\\\\e4549c71-1d79-439d-8317-bc195a0dd561\\\\scratchpad\\\\balance-check.cjs\" \"c:\\\\Users\\\\Sainath\\\\OneDrive\\\\Desktop\\\\job-tracker-v2\\\\extension\\\\content.js\")",
+      "Bash(node \"C:\\\\Users\\\\Sainath\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-Sainath-OneDrive-Desktop-job-tracker-v2\\\\e4549c71-1d79-439d-8317-bc195a0dd561\\\\scratchpad\\\\test-normalize2.cjs\")",
+      "Bash(node test-primary-desc.cjs)",
+      "Bash(node \"C:\\\\Users\\\\Sainath\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-Sainath-OneDrive-Desktop-job-tracker-v2\\\\e4549c71-1d79-439d-8317-bc195a0dd561\\\\scratchpad\\\\test-location-parse.cjs\")",
+      "Bash(node \"C:\\\\Users\\\\Sainath\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-Sainath-OneDrive-Desktop-job-tracker-v2\\\\e4549c71-1d79-439d-8317-bc195a0dd561\\\\scratchpad\\\\test-title-desc-location.cjs\")",
+      "Bash(node \"C:\\\\Users\\\\Sainath\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-Sainath-OneDrive-Desktop-job-tracker-v2\\\\e4549c71-1d79-439d-8317-bc195a0dd561\\\\scratchpad\\\\test-shape-match.cjs\")",
+      "Bash(node \"C:\\\\Users\\\\Sainath\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-Sainath-OneDrive-Desktop-job-tracker-v2\\\\e4549c71-1d79-439d-8317-bc195a0dd561\\\\scratchpad\\\\test-bugfixes.cjs\")"
+    ]
+  }
+}
