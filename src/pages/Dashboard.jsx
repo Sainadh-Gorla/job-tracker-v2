@@ -7,9 +7,11 @@ import AutoFillBar from '../components/AutoFillBar'
 import TipsSidebar from '../components/TipsSidebar'
 import { STATUSES } from '../constants/status'
 import { useJobs } from '../hooks/useJobs'
+import { useGmailSync } from '../hooks/useGmailSync'
 
 export default function Dashboard() {
   const { jobs, loading, error, addJob, updateJob, deleteJob } = useJobs()
+  const gmail = useGmailSync(jobs, updateJob)
   const [showForm, setShowForm] = useState(false)
   const [prefill, setPrefill] = useState(null)
   const [formKey, setFormKey] = useState(0)
@@ -49,8 +51,15 @@ export default function Dashboard() {
 
   return (
     <div className="dashboard">
-      <Navbar />
+      <Navbar gmail={gmail} />
       <main className="dashboard-content">
+        {gmail.error && <p className="auth-error">Gmail sync: {gmail.error}</p>}
+        {gmail.updatedCount > 0 && (
+          <p className="gmail-sync-note">
+            Gmail sync updated {gmail.updatedCount} application{gmail.updatedCount === 1 ? '' : 's'} from recent emails.
+          </p>
+        )}
+
         <AutoFillBar onExtracted={handleExtracted} />
 
         <StatsBar jobs={jobs} activeFilter={filter} onFilterChange={setFilter} />

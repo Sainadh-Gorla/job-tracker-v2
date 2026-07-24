@@ -9,6 +9,7 @@
   --color-danger: #dc2626;
 
   --color-applied: #2563eb;
+  --color-screening: #7c3aed;
   --color-interview: #d97706;
   --color-offer: #16a34a;
   --color-rejected: #dc2626;
@@ -187,6 +188,30 @@ label {
   font-size: 0.85rem;
 }
 
+.gmail-status {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.gmail-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-offer);
+}
+
+.gmail-sync-note {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  color: #166534;
+  padding: 0.6rem 0.8rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+}
+
 /* Dashboard */
 
 .dashboard-content {
@@ -335,6 +360,10 @@ label {
 
 .stat-applied {
   border-top-color: var(--color-applied);
+}
+
+.stat-screening {
+  border-top-color: var(--color-screening);
 }
 
 .stat-interview {
@@ -527,6 +556,10 @@ label {
 
 .badge-applied {
   background: var(--color-applied);
+}
+
+.badge-screening {
+  background: var(--color-screening);
 }
 
 .badge-interview {
